@@ -98,7 +98,8 @@ class World:
             
         def walk(x, y):
             vis[y][x] = 1
- 
+            reverse_dirs = {"n": "s", "s": "n", "e": "w", "w": "e"}
+            
             d = [(x - 1, y), (x, y + 1), (x + 1, y), (x, y - 1)]
             shuffle(d)
             for (xx, yy) in d:
@@ -108,19 +109,26 @@ class World:
                     if xx == x :
                         if yy < y:
                             room_direction = "s"
+                            reverse_dir = reverse_dirs[room_direction]
                             self.grid[y][x].connectRooms(self.grid[yy][xx], room_direction)
-
+                            self.grid[yy][xx].connectRooms(self.grid[y][x], reverse_dir)
                         else:
                             room_direction = "n"
+                            reverse_dir = reverse_dirs[room_direction]
                             self.grid[y][x].connectRooms(self.grid[yy][xx], room_direction)
+                            self.grid[yy][xx].connectRooms(self.grid[y][x], reverse_dir)
                 #     if yy == y: ver[y][max(x, xx)] = "   "
                     if yy == y:
                         if xx < x:
                             room_direction = "w"
+                            reverse_dir = reverse_dirs[room_direction]
                             self.grid[y][x].connectRooms(self.grid[yy][xx], room_direction)
+                            self.grid[yy][xx].connectRooms(self.grid[y][x], reverse_dir)
                         else: 
                             room_direction = "e"
+                            reverse_dir = reverse_dirs[room_direction]
                             self.grid[y][x].connectRooms(self.grid[yy][xx], room_direction)
+                            self.grid[yy][xx].connectRooms(self.grid[y][x], reverse_dir)
                     walk(xx, yy)
 
         start_x = randrange(self.width)
