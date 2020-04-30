@@ -22,6 +22,15 @@ def initialize(request):
     players = room.playerNames(player_id)
     return JsonResponse({'uuid': uuid, 'name':player.user.username, 'title':room.title, 'description':room.description, 'players':players}, safe=True)
 
+@csrf_exempt
+@api_view(["GET"])
+def get_world(request):
+    rooms = Room.objects.all()
+    result = []
+    for room in rooms:
+        r_dict = {'id': room.id, 'title': room.title, 'description': room.description,'x': room.x, 'y': room.y, 'n_to': room.n_to, 'e_to': room.e_to, 's_to': room.s_to, 'w_to': room.w_to }
+        result.append(r_dict)
+    return JsonResponse({"grid": result})
 
 # @csrf_exempt
 @api_view(["POST"])
@@ -58,6 +67,8 @@ def move(request):
     else:
         players = room.playerNames(player_id)
         return JsonResponse({'name':player.user.username, 'title':room.title, 'description':room.description, 'players':players, 'error_msg':"You cannot move that way."}, safe=True)
+
+
 
 
 @csrf_exempt
