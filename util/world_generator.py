@@ -1,10 +1,5 @@
-# Sample Python code that can be used to generate rooms in
-# a zig-zag pattern.
-#
-# You can modify generate_rooms() to create your own
-# procedural generation algorithm and use print_rooms()
-# to see the world.
-
+from random import shuffle, randrange
+#from create_room import r_general
 
 class Room:
     def __init__(self, id, name, description, x, y):
@@ -35,7 +30,6 @@ class Room:
         '''
         return getattr(self, f"{direction}_to")
 
-
 class World:
     def __init__(self):
         self.grid = None
@@ -52,6 +46,9 @@ class World:
         self.height = size_y
         for i in range( len(self.grid) ):
             self.grid[i] = [None] * size_x
+            
+        # keys = r_general.keys()
+        # shuffled_keys = random.shuffle(keys)
 
         # Start from lower-left corner (0,0)
         x = -1 # (this will become 0 on the first step)
@@ -80,20 +77,49 @@ class World:
                 direction *= -1
 
             # Create a room in the given direction
-            room = Room(room_count, "A Generic Room", "This is a generic room.", x, y)
+            # room = Room(room_count, shuffled_keys[room_count] , r_general[shuffled_keys[room_count]], x, y)
             # Note that in Django, you'll need to save the room after you create it
-
+            # room.save()
+            room = Room(room_count, "A Generic Room", "This is a generic room.", x, y)
             # Save the room in the World grid
             self.grid[y][x] = room
-
-            # Connect the new room to the previous room
-            if previous_room is not None:
-                previous_room.connect_rooms(room, room_direction)
-
-            # Update iteration variables
-            previous_room = room
             room_count += 1
 
+        vis = [[0] * self.width for _ in range(self.height)] 
+        
+            
+        def walk(x, y):
+            vis[y][x] = 1
+ 
+            d = [(x - 1, y), (x, y + 1), (x + 1, y), (x, y - 1)]
+            shuffle(d)
+            for (xx, yy) in d:
+                if xx in range(self.width) and yy in range(self.height): 
+                    if vis[yy][xx]: continue
+                #     if xx == x: hor[max(y, yy)][x] = "+  "
+                    if xx == x :
+                        if yy < y:
+                            room_direction = "s"
+                            self.grid[y][x].connect_rooms(self.grid[yy][xx], room_direction)
+
+                        else:
+                            room_direction = "n"
+                            self.grid[y][x].connect_rooms(self.grid[yy][xx], room_direction)
+                #     if yy == y: ver[y][max(x, xx)] = "   "
+                    if yy == y:
+                        if xx < x:
+                            room_direction = "w"
+                            self.grid[y][x].connect_rooms(self.grid[yy][xx], room_direction)
+                        else: 
+                            room_direction = "e"
+                            self.grid[y][x].connect_rooms(self.grid[yy][xx], room_direction)
+                    walk(xx, yy)
+
+        start_x = randrange(self.width)
+        start_y = randrange(self.height)
+
+        print((start_x, start_y))
+        walk(start_x, start_y)
 
 
     def print_rooms(self):
@@ -154,7 +180,7 @@ class World:
 w = World()
 num_rooms = 100
 width = 10
-height = 12
+height = 10
 w.generate_rooms(width, height, num_rooms)
 w.print_rooms()
 
