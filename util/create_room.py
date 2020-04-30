@@ -43,12 +43,12 @@ rooms ={"Small Antechamber": "The walls drip with blood.",
         "Portrait Gallery": "The walls are lined with portraits of long dead nobles with forboding countenences",
         "Statuary": "Most of the room is filled with mundane busts, but towards the back of the room lay statues of strange creatures.",
         "Strang Gallery": "Strange paintings of dark scenes line the walls and an abandon easel sits in the corner.",
-        "Lush Conservatory": "This room is made of glass and lush vegitation abounds. Creeping vines have taken over the walkways and furniture.  But, a question arises: who is watering all of these plants?"",
+        "Lush Conservatory": "This room is made of glass and lush vegitation abounds. Creeping vines have taken over the walkways and furniture.  But, a question arises: who is watering all of these plants?",
         "Forgotten Conservatory": "Dead plants sparsely inhabit the room, most of them having dried up long ago. The air is dusty and clouded, making breathing especially difficult.",
         "Deadly Conservatory": "Strange carnivorous plants fill the room and a suttle smell of rotting flesh permeates the air.",
         "Abandoned Labaoratory": "Broken glass is scattered across the floor and counters. Strange bubbling liquid fills jars that line the shelves.",
         "Functioning Laboratory": "Beakers and distilation contraptions line the counters of this room filled with various colored fluid. Some sit over burners still lit.",
-        "Madman's Laboratory": "Jars filled with eyeballs that seem to follow you whenever you turn your back line the shelves." 
+        "Madman's Laboratory": "Jars filled with eyeballs that seem to follow you whenever you turn your back line the shelves.",
         "Torture Laboratory": "Tables equiped with restraints and stained with blood sit ominously in the center of the room.",
         "Paneled Passageway": "Within one of the wood panels there was a small brass keyhole",
         "Tapestried Passageway": "The ancient tapestrys hanging on the wall formed a beautiful mountian scene",
@@ -84,17 +84,17 @@ rooms ={"Small Antechamber": "The walls drip with blood.",
         "Buttery": "A pot hung on a hook within the huge fireplace.",
         "Lord's Servant Quarters": "This room is small but tidy.",
         "Ladies Servant Quarters": "A woman's manquine held a dress that was nearly finished.",
-        "Housekeepers Room": "The strong smell of castile soap lingered in the air."
-        "Classroom": "A history lesson seems to have recently been in session."
-        "Saloon": "There is a secret passage to the left of the fireplace"
-        "Bake House": "The huge fireplace still had glowing bits of timber in the grate."
-        "Keep": "Birds flew in and out of the windows and perched high in the rafters."
-        "Service Room": "Broken item were scattered around on several long tables."
-        "Scullery": "Dirty dishes were stacked high on one side of  huge wash basin."
-        "Lord's Dressing Room": "A suit of the finest material was ready to be doned."
-        "Nursery": "A comfortable rocking chair is gently moving."
-        "Cabinet": "Even more books lined the walls of this stately cabinet room"
-        "Boudoir": "Embroidery needles, knitting needles and a spinning wheel were ready to create a new garment."
-        "Casemate": "Sword helmets and chainmail were scattered across the stone benches."
-        "Visitor's Chambers": "The feather bed looks very inviting."
+        "Housekeepers Room": "The strong smell of castile soap lingered in the air.",
+        "Classroom": "A history lesson seems to have recently been in session.",
+        "Saloon": "There is a secret passage to the left of the fireplace.",
+        "Bake House": "The huge fireplace still had glowing bits of timber in the grate.",
+        "Keep": "Birds flew in and out of the windows and perched high in the rafters.",
+        "Service Room": "Broken item were scattered around on several long tables.",
+        "Scullery": "Dirty dishes were stacked high on one side of  huge wash basin.",
+        "Lord's Dressing Room": "A suit of the finest material was ready to be doned.",
+        "Nursery": "A comfortable rocking chair is gently moving.",
+        "Cabinet": "Even more books lined the walls of this stately cabinet room",
+        "Boudoir": "Embroidery needles, knitting needles and a spinning wheel were ready to create a new garment.",
+        "Casemate": "Sword helmets and chainmail were scattered across the stone benches.",
+        "Visitor's Chambers": "The feather bed looks very inviting.",
         "Place of Arms": "This empty room seems to echo with excitement"}
