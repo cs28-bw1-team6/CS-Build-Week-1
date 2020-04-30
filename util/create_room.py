@@ -98,5 +98,4 @@ rooms ={"Small Antechamber": "The walls drip with blood.",
         "Casemate": "Sword helmets and chainmail were scattered across the stone benches.",
         "Visitor's Chambers": "The feather bed looks very inviting.",
         "Place of Arms": "This empty room seems to echo with excitement",
-        "School": "Lot's of toys + lot's of children = lot's of fun!",
-        "Boudoirs": "The lady of the castle must spend lot's of time in here."}
+        "School": "Lot's of toys + lot's of children = lot's of fun!"}

@@ -84,7 +84,10 @@ class World:
             # room = Room(room_count, shuffled_keys[room_count] , r_general[shuffled_keys[room_count]], x, y)
             # Note that in Django, you'll need to save the room after you create it
             # room.save()
-            room = Room(room_id=room_count, title=shuffled_rooms[room_count], description=rooms[shuffled_rooms[room_count]], x=x, y=y)
+            if room_count == 0:
+                room = Room(room_id=room_count, title="Foyer", description="As you enter the castle, the door slams shut locking you in. Can you find your way out?", x=x, y=y)
+            else:
+                room = Room(room_id=room_count, title=shuffled_rooms[room_count], description=rooms[shuffled_rooms[room_count]], x=x, y=y)
             # Save the room in the World grid
             self.grid[y][x] = room
             room.save()
