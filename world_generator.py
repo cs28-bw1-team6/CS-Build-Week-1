@@ -87,7 +87,7 @@ class World:
             if room_count == 0:
                 room = Room(room_id=room_count, title="Foyer", description="As you enter the castle, the door slams shut locking you in. Can you find your way out?", x=x, y=y)
             else:
-                room = Room(room_id=room_count, title=shuffled_rooms[room_count], description=rooms[shuffled_rooms[room_count]], x=x, y=y)
+                room = Room(room_id=room_count, title=shuffled_rooms[room_count-1], description=rooms[shuffled_rooms[room_count-1]], x=x, y=y)
             # Save the room in the World grid
             self.grid[y][x] = room
             room.save()
